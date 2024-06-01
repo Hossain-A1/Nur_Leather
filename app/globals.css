@@ -2,32 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+::-webkit-scrollbar-thumb {
+  background-color: #6240C0;
+  height: 20px;
+  border-radius: 5px;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+::-webkit-scrollbar-track {
+  background-color: #FF7A3D;
+  
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+::selection {
+  color: #f4f4f4;
+  background-color: #21242b;
 }
+
+.eq {
+  transition: 500ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+.sp {
+  @apply py-20;
+}
+/* typography */
+
+span{
+  @apply text-[1.1rem] font-semibold text-dark/70 capitalize
+}
+
+h1{
+  @apply text-[3.5rem]  max-md:text-4xl  font-extrabold
+}
+h2{
+  @apply text-[2.5rem]  max-md:text-[1.7rem] text-center font-bold
+}
+h3{
+  @apply text-3xl max-lg:text-2xl text-center md:text-start leading-[3rem]  font-[700]
+}
+h4{
+  @apply text-2xl text-center    font-[700]
+}
+p{
+  @apply text-[1rem] leading-7  text-dark/85 font-[500]
+}
+
