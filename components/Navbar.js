@@ -21,7 +21,7 @@ export default function Navbar() {
     },
   ];
   return (
-    <header className='h-28  border-b max-md:hidden'>
+    <header className='h-28 bg-light  border-b  fixed top-0 right-0 left-0 z-[900]'>
       <nav className='flex  container items-center gap-20 h-full w-full'>
         <div className='logo-and-filter flex items-center justify-center gap-20'>
           <div className='leading-7'>
@@ -57,11 +57,11 @@ export default function Navbar() {
             />
 
             <span className='absolute right-0 h-full top-0 bottom-0   '>
-              <FaSearch className='text-xl bg-blue h-full  text-light' />
+              <FaSearch className='text-sm bg-blue h-full w-10 p-2.5  text-light' />
             </span>
           </div>
 
-          <div className='cart-and-user clear-start flex items-center'>
+          <div className='cart-and-user clear-start gap-5 flex items-center'>
             <span>cart</span>
             <div>user</div>
           </div>
