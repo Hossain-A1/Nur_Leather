@@ -99,23 +99,20 @@ export default function ShopByCategory() {
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         slidesPerView={1}
         breakpoints={{
-          320:{
+          320: {
             slidesPerView: 3,
           },
           640: {
             slidesPerView: 3,
           },
-         
+
           768: {
             slidesPerView: 4,
           },
           1024: {
             slidesPerView: 6,
           },
-          
         }}
-      classyt
-    
         spaceBetween={30}
         loop={true}
         speed={700}
@@ -129,7 +126,7 @@ export default function ShopByCategory() {
         {categories.map((category) => (
           <SwiperSlide key={category.id}>
             <div
-              className='cursor-pointer text-center rounded-lg shadow-lg transition-transform transform hover:-translate-y-2 bg-gray-50 '
+              className='cursor-pointer text-center rounded-lg shadow-lg transition-transform transform hover:-translate-y-2 bg-gray-50 mb-20 '
               onClick={() => handleCategoryClick(category.slug)}
             >
               <div className='relative w-full h-48 sm:h-56'>

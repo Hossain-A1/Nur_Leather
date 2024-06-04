@@ -5,7 +5,7 @@ import { MdLocalOffer } from "react-icons/md";
 
 export default function Hero() {
   return (
-    <div className='h-full md:h-[calc(100vh-5rem)] w-full sp'>
+    <div className='h-full md:h-[calc(100vh-5rem)] w-full sp space-y-2.5'>
       <div className='relative h-full w-full'>
         <Image
           src='https://images.pexels.com/photos/1895019/pexels-photo-1895019.jpeg?auto=compress&cs=tinysrgb&w=600'
@@ -18,7 +18,7 @@ export default function Hero() {
           <h1 className='text-4xl font-bold mt-8'>FIND YOUR OWN STYLE</h1>
         </div>
       </div>
-      <div className='bg-white py-6 px-4 flex flex-wrap justify-around items-center'>
+      <div className='bg-white py-6 px-4 flex flex-wrap justify-around items-center shadow-lg mt-5'>
         <div className='flex items-center space-x-2'>
           <MdLocalOffer className='w-10 h-10 text-gray-700' />
           <div>

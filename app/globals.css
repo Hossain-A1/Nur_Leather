@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,14 +13,13 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #6240C0;
+  background-color: #6240c0;
   height: 20px;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #FF7A3D;
-  
+  background-color: #ff7a3d;
 }
 
 ::selection {
@@ -37,23 +35,41 @@ html {
 }
 /* typography */
 
-span{
-  @apply text-[1.1rem] font-semibold text-dark/70 capitalize
+span {
+  @apply text-[1.1rem] font-semibold text-dark/70 capitalize;
 }
 
-h1{
-  @apply text-[3.5rem]  max-md:text-4xl  font-extrabold
+h1 {
+  @apply text-[3.5rem]  max-md:text-4xl  font-extrabold;
 }
-h2{
-  @apply text-[2.5rem]  max-md:text-[1.7rem] text-center font-bold
+h2 {
+  @apply text-[2.5rem]  max-md:text-[1.7rem] text-center font-bold;
 }
-h3{
-  @apply text-3xl max-lg:text-2xl text-center md:text-start leading-[3rem]  font-[700]
+h3 {
+  @apply text-2xl text-start  leading-[3rem]  font-[500];
 }
-h4{
-  @apply text-2xl text-center    font-[700]
+h4 {
+  @apply text-2xl text-center    font-[700];
 }
-p{
-  @apply text-[1rem] leading-7  text-dark/85 font-[500]
+p {
+  @apply text-[1rem] leading-7  text-dark/85 font-[500];
 }
 
+
+.swiper-pagination-bullet {
+  background-color: rgb(217, 17, 74) !important;
+  padding: 0.7rem !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: rgb(217, 17, 74) !important;
+  padding: 0.7rem !important;
+}
+
+/* Media query for small devices */
+@media screen and (max-width: 600px) {
+  .swiper-pagination-bullet,
+  .swiper-pagination-bullet-active {
+    padding: 0.3rem !important;
+  }
+}
