@@ -129,13 +129,13 @@ export default function ShopByCategory() {
               className='cursor-pointer text-center rounded-lg shadow-lg transition-transform transform hover:-translate-y-2 bg-gray-50 mb-20 '
               onClick={() => handleCategoryClick(category.slug)}
             >
-              <div className='relative w-full h-48 sm:h-56'>
+              <div className='relative w-full h-40 sm:h-48'>
                 <Image
                   src={category.imageUrl}
                   alt={category.name}
                   layout='fill'
                   objectFit='cover'
-                  className='rounded-t-lg'
+                  className='rounded-t-lg hover:scale-105'
                 />
               </div>
               <p className='mt-4 text-red-500 text-sm'>{category.title}</p>

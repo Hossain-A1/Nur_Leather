@@ -25,7 +25,7 @@ export default function Navbar() {
       <nav className='flex  container items-center gap-20 h-full w-full'>
         <div className='logo-and-filter flex items-center justify-center gap-20'>
           <div className='leading-7'>
-            <h2 className=''>Leather</h2>
+            <h2 className='text-blue'>Leather</h2>
             <span className='block text-right uppercase font-semibold italic'>
               Luxeris
             </span>

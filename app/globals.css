@@ -46,10 +46,16 @@ h2 {
   @apply text-[2.5rem]  max-md:text-[1.7rem] text-center font-bold;
 }
 h3 {
-  @apply text-2xl text-start  leading-[3rem]  font-[500];
+  @apply text-3xl    font-bold;
 }
 h4 {
   @apply text-2xl text-center    font-[700];
+}
+h5{
+  @apply lg:text-4xl text-2xl text-center    font-bold;
+}
+h6{
+  @apply lg:text-2xl text-xl text-center    font-semibold;
 }
 p {
   @apply text-[1rem] leading-7  text-dark/85 font-[500];
