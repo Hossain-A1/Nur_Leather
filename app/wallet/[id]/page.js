@@ -1,12 +1,14 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { FaMoneyBill } from "react-icons/fa";
 import { RiEBike2Fill } from "react-icons/ri";
 import { FaCarSide } from "react-icons/fa";
 import { FaSync } from "react-icons/fa";
 import Button from "@/components/ui/Button";
+import Loading from "@/components/ui/Loading";
 export default function WalletDetailsPage() {
+  const [loading, setLoading] = useState(null);
   const mainImage = "/images/wallet.jpg";
   const thumbnails = [
     "/images/thumb1.jpg",
@@ -23,9 +25,33 @@ export default function WalletDetailsPage() {
 
   const [currentQuantity, setCurrentQuantity] = React.useState(1);
 
+  const products = [
+    {
+      id: 1,
+      imgSrc:
+        "https://images.pexels.com/photos/4386178/pexels-photo-4386178.jpeg?auto=compress&cs=tinysrgb&w=600",
+      oldPrice: "৳1050",
+      newPrice: "৳990",
+      description: "Premium Quality Original Leather",
+    },
+    {
+      id: 2,
+      imgSrc:
+        "https://images.pexels.com/photos/4386178/pexels-photo-4386178.jpeg?auto=compress&cs=tinysrgb&w=600",
+      oldPrice: "৳1050",
+      newPrice: "৳990",
+      description: "Premium Quality Original Leather...",
+    },
+    // Add more products here following the same structure
+  ];
   return (
-    <div className='container sp mt-10 '>
-      <div className='flex flex-col gap-6 lg:flex-row shadow-md'>
+    <div className='container sp mt-10 space-y-5 lg:space-y-10 '>
+      {loading && (
+        <div className="mt-80">
+          <Loading loading={loading} />
+        </div>
+      )}
+      <div className='flex flex-col gap-6 xl:flex-row shadow-md'>
         <div className=' flex flex-col md:flex-row'>
           {/* Left Section - Image */}
           <picture className='md:w-1/2 p-4'>
@@ -73,7 +99,7 @@ export default function WalletDetailsPage() {
                 <input
                   type='text'
                   value={currentQuantity}
-                  className='w-12 text-center font-bold '
+                  className='w-12 text-center font-bold outline-none border-none '
                   readOnly
                 />
                 <button
@@ -187,20 +213,60 @@ export default function WalletDetailsPage() {
           <hr className='w-60 text-dark' />
         </div>
 
-        <div className="space-y-5 mt-5">
+        <div className='space-y-5 mt-5'>
           <div className='flex gap-5'>
             <em>Material: Orginal Leather.</em>
             <em>warranty : 2 years replacement warranty</em>
             <em> Brand : Run Leather. </em>
             <em> Model : LW-09</em>
           </div>
-        <div className="flex flex-col gap-5">
-        <em>Made in : Bangladesh.</em>
-          <em>Size : Height 20 cmX Length 11 CmX Width 3</em>
-          <em>Color : As Like Picture </em>
-          <em>Type       : Long Wallet & Purse.  </em>
-          <p>Nice Look and Durable Wallet, Great gift for favourite person !!</p>
+          <div className='flex flex-col gap-5'>
+            <em>Made in : Bangladesh.</em>
+            <em>Size : Height 20 cmX Length 11 CmX Width 3</em>
+            <em>Color : As Like Picture </em>
+            <em>Type : Long Wallet & Purse. </em>
+            <p>
+              Nice Look and Durable Wallet, Great gift for favourite person !!
+            </p>
+          </div>
         </div>
+      </div>
+
+      <div className='related-product  shadow-md'>
+        <h2 className='text-start mb-4'>Related products</h2>
+        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+          {products.map((product) => (
+            <div key={product.id} className='border '>
+              <Image
+                src={product.imgSrc}
+                alt={product.description}
+                width={500}
+                height={500}
+                objectFit='cover'
+                className='mb-4'
+              />
+              <div className='p-2'>
+                <p className='text-sm whitespace-nowrap'>
+                  {product.description.substring(0, 15)}...
+                </p>
+                <p className='text-sm hidden '>{product.description}...</p>
+                <div className='flex items-center justify-between mt-2'>
+                  <span className='line-through text-gray-500'>
+                    {product.oldPrice}
+                  </span>
+                  <span className='text-red-600'>{product.newPrice}</span>
+                </div>
+              </div>
+              <Button
+                href='/checkout'
+                size='full'
+                variant='secondary'
+                className='mt-2 bg-orange-500 text-dark py-2 px-4 rounded'
+              >
+                <h6 className='text-sm md:text-xl'> অর্ডার করুন</h6>
+              </Button>
+            </div>
+          ))}
         </div>
       </div>
     </div>

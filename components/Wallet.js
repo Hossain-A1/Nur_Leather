@@ -1,11 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FiShoppingCart } from "react-icons/fi";
+import CurrencyFormatter from "./ui/CurrencyFormatter";
 
 export default function Wallet() {
   const products = [
-    { id: 1, price: 990, imgSrc: "/path/to/image1.jpg" },
-    { id: 2, price: 650, imgSrc: "/path/to/image2.jpg" },
+    {
+      id: 1,
+      price: 990,
+      imgSrc:
+        "https://images.pexels.com/photos/20015773/pexels-photo-20015773/free-photo-of-choice-of-leather-wallets-with-embellishments.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      id: 2,
+      price: 650,
+      imgSrc:
+        "https://images.pexels.com/photos/20015773/pexels-photo-20015773/free-photo-of-choice-of-leather-wallets-with-embellishments.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
     { id: 3, price: 750, imgSrc: "/path/to/image3.jpg" },
     { id: 4, price: 650, imgSrc: "/path/to/image4.jpg" },
     { id: 5, price: 990, imgSrc: "/path/to/image5.jpg" },
@@ -37,8 +48,11 @@ export default function Wallet() {
 
         <div className='grid grid-cols-2  lg:grid-cols-3 gap-4 w-full'>
           {products.map((product) => (
-            <div key={product.id} className='border p-4 rounded-lg'>
-              <Link href={`/wallet/${product.id}`} className='relative block w-full h-32 mb-4'>
+            <div key={product.id} className='border rounded-lg'>
+              <Link
+                href={`/wallet/${product.id}`}
+                className='relative block  w-full h-44 md:h-60 '
+              >
                 <Image
                   src={product.imgSrc}
                   alt={`Wallet ${product.id}`}
@@ -47,14 +61,20 @@ export default function Wallet() {
                   className='rounded-lg'
                 />
               </Link>
-              <small>Premium Quality Original Leather</small>
-              <p className='text-red-600 font-bold'>৳ {product.price}</p>
-              <Link href='/cart' className='flex items-center justify-between'>
-                <span>Buy</span>
-                <span className='bg-dark/10 text-center p-2.5 rounded-md'>
-                  <FiShoppingCart className='w-5 h-5  text-center text-dark font-semibold' />
-                </span>
-              </Link>
+              <div className='p-2'>
+                <small>Premium Quality Original Leather</small>
+                <Link
+                  href='/cart'
+                  className='flex items-center justify-between'
+                >
+                  <small className='text-red font-bold'>
+                    <CurrencyFormatter amount={product.price} />
+                  </small>
+                  <span className='bg-dark/10 hover:bg-dark/20 eq text-center p-2 rounded-md'>
+                    <FiShoppingCart className='w-4 h-4  text-center text-dark font-semibold' />
+                  </span>
+                </Link>
+              </div>
             </div>
           ))}
         </div>

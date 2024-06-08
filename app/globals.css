@@ -40,7 +40,7 @@ span {
 }
 
 h1 {
-  @apply text-[3.5rem]  max-md:text-4xl  font-extrabold;
+  @apply text-[3.5rem]  max-md:text-3xl  font-extrabold;
 }
 h2 {
   @apply text-[2.5rem]  max-md:text-[1.7rem] text-center font-bold;
@@ -63,12 +63,12 @@ p {
 
 
 .swiper-pagination-bullet {
-  background-color: rgb(217, 17, 74) !important;
+  background-color: #FF7A3D !important;
   padding: 0.7rem !important;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: rgb(217, 17, 74) !important;
+  background-color:#FF7A3D !important;
   padding: 0.7rem !important;
 }
 
