@@ -1,8 +1,7 @@
 export default function CurrencyFormatter({ amount }) {
-  const formattedAmount = new Intl.NumberFormat("en-BD", {
-    maximumFractionDigits: 2,
+  return new Intl.NumberFormat("en-BD", {
+    style: "currency",
+    currency: "BDT",
+    minimumFractionDigits: 0,
   }).format(amount);
-
-  // Remove the space between the currency symbol and the amount
-  return `৳ ${formattedAmount}`;
 }

@@ -1,7 +1,13 @@
+"use client";
 import Link from "next/link";
+import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
+import SideMenu from "./SideMenu";
+
 export default function Navbar() {
+  const [openSideMenu, setOpenSideMenu] = useState(false);
+
   const navContents = [
     { href: "/", label: "home" },
     {
@@ -21,6 +27,7 @@ export default function Navbar() {
       label: "contact",
     },
   ];
+
   return (
     <header className='h-28 bg-light  border-b  fixed top-0 right-0 left-0 z-[900]'>
       <nav className='flex  container items-center justify-between gap-6 xl:gap-10 2xl:gap-20 h-full w-full'>
@@ -32,7 +39,10 @@ export default function Navbar() {
             </span>
           </div>
 
-          <div className='filter flex gap-4 px-2 py-2 cursor-pointer items-center justify-center border border-dark '>
+          <div
+            onClick={() => setOpenSideMenu(true)}
+            className='filter-icon eq flex gap-4 px-2 py-2 cursor-pointer items-center justify-center border border-dark '
+          >
             <span>
               <GiHamburgerMenu className='font-semibold text-2xl text-dark h-full' />
             </span>
@@ -46,7 +56,7 @@ export default function Navbar() {
           <ul className='flex  justify-center items-center   duration-700 md:gap-5 xl:gap-10  '>
             {navContents.map((item) => (
               <li
-                className='   flex justify-center font-semibold items-center text-[1rem]  capitalize'
+                className='   flex justify-center font-semibold items-center text-[1rem] xl:text-xl  capitalize'
                 key={item.label}
               >
                 <Link href={item.href}>{item.label}</Link>
@@ -58,7 +68,7 @@ export default function Navbar() {
             <input
               type='search'
               placeholder='search'
-              className='py-2 px-4 outline-none w-full '
+              className='py-2 px-4 outline-none border border-dark w-full '
             />
 
             <span className='absolute right-0 h-full top-0 bottom-0   '>
@@ -70,6 +80,9 @@ export default function Navbar() {
         <div className='cart-and-user clear-start gap-5 flex items-center'>
           <span>cart</span>
           <div>user</div>
+        </div>
+        <div>
+          {openSideMenu && <SideMenu setOpenSideMenu={setOpenSideMenu} />}
         </div>
       </nav>
     </header>
