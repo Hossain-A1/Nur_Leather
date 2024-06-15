@@ -1,3 +1,4 @@
+
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import authReducer from "./features/auth/authSlice";
 import cartReducer from "./features/cart/cartSlice";
@@ -38,6 +39,4 @@ export const store = configureStore({
 });
 export const persistor = persistStore(store);
 
-export const  RootState = store.getState
-
-
+export const RootState = store.getState;

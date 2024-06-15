@@ -110,7 +110,7 @@ export default function ShopByCategory() {
             slidesPerView: 4,
           },
           1024: {
-            slidesPerView: 6,
+            slidesPerView: 5,
           },
         }}
         spaceBetween={30}

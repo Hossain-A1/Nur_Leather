@@ -1,9 +1,15 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { FiShoppingCart } from "react-icons/fi";
 import CurrencyFormatter from "./ui/CurrencyFormatter";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "@/redux/features/cart/cartSlice";
 
 export default function Wallet() {
+  const { cartItems } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+
   const products = [
     {
       id: 1,
@@ -71,7 +77,10 @@ export default function Wallet() {
                     <CurrencyFormatter amount={product.price} />
                   </small>
                   <span className='bg-dark/10 hover:bg-dark/20 eq text-center p-2 rounded-md'>
-                    <FiShoppingCart className='w-4 h-4  text-center text-dark font-semibold' />
+                    <FiShoppingCart
+                      onClick={dispatch(addToCart)}
+                      className='w-4 h-4  text-center text-dark font-semibold'
+                    />
                   </span>
                 </Link>
               </div>

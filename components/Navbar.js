@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import SideMenu from "./SideMenu";
+import { FaUser, FaCartPlus } from "react-icons/fa6";
 
 export default function Navbar() {
   const [openSideMenu, setOpenSideMenu] = useState(false);
@@ -52,7 +53,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className='max-lg:hidden flex justify-center items-center gap-6'>
+        <div className='max-lg:hidden flex justify-center items-center gap-6 '>
           <ul className='flex  justify-center items-center   duration-700 md:gap-5 xl:gap-10  '>
             {navContents.map((item) => (
               <li
@@ -77,9 +78,15 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className='cart-and-user clear-start gap-5 flex items-center'>
-          <span>cart</span>
-          <div>user</div>
+        <div className='cart-and-user clear-start gap-5 flex items-center justify-end md:justify-center  w-full '>
+          <span>
+            <FaCartPlus className='text-2xl text-dark font-semibold' />
+          </span>
+          <div>
+            <span>
+              <FaUser className='text-2xl text-dark font-semibold' />
+            </span>
+          </div>
         </div>
         <div>
           {openSideMenu && <SideMenu setOpenSideMenu={setOpenSideMenu} />}

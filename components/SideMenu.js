@@ -17,12 +17,17 @@ export default function SideMenu({ setOpenSideMenu }) {
       name: "Loafer",
       subCategories: ["Loafer", "Sandal", "Mojari Shoes", "Loafer Shoe"],
     },
-    { name: "Wallet", subCategories: ["Wallet"] },
-    { name: "Belt" },
-    { name: "Bag" },
-    { name: "Sandel" },
-    { name: "Women's" },
-    { name: "Half Shoe" },
+    { name: "Wallet", subCategories: ["Long-Wallet", "Box-wallet"] },
+    { name: "Belt", subCategories: ["Leather Belt"] },
+    {
+      name: "Bag",
+      subCategories: ["Office-bag", "Ladies-bag", "Personal-bag"],
+    },
+    {
+      name: "Sandel",
+      subCategories: ["Slippers", "new-collection", "Eid-collection"],
+    },
+    { name: "Women's", subCategories: ["women's shoe", "new-collection"] },
   ];
 
   return (
@@ -45,16 +50,19 @@ export default function SideMenu({ setOpenSideMenu }) {
                 {category.subCategories && (
                   <button
                     onClick={() => toggleCategory(category.name)}
-                    className='ml-2   w-10  text-xl font-semibold border text-center border-blue '
+                    className='ml-2   w-10  text-xl font-semibold shadow-sm shadow-blue  text-center '
                   >
                     {openCategories[category.name] ? "-" : "+"}
                   </button>
                 )}
               </div>
               {openCategories[category.name] && (
-                <ul className='ml-4 flex flex-col gap-2'>
+                <ul className='ml-4 bg-dark/10  flex flex-col gap-2 mb-1'>
                   {category.subCategories.map((subCategory) => (
-                    <li key={subCategory} className='text-sm'>
+                    <li
+                      key={subCategory}
+                      className='text-sm  border-b border-dark p-1 capitalize'
+                    >
                       <Link href={`/${subCategory.toLowerCase()}`}>
                         {subCategory}
                       </Link>
