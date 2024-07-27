@@ -1,4 +1,4 @@
-import {  createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
 
 const initialState = {
@@ -11,7 +11,7 @@ export const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       let existedCartItem = state.cartItems.findIndex(
-        (cart) => cart._id === action.payload._id
+        (cart) => cart.id === action.payload.id
       );
 
       if (existedCartItem >= 0) {

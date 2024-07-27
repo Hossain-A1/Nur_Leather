@@ -11,7 +11,7 @@ import Link from "next/link";
 import CurrencyFormatter from "./ui/CurrencyFormatter";
 import { FiShoppingCart } from "react-icons/fi";
 import { useDispatch } from "react-redux";
-import { addToCart } from "@/redux/features/cart/cartSlice";
+import { addToCart } from "@/redux/feature/cart/cartSlice";
 
 SwiperCore.use([Autoplay, Pagination]);
 

@@ -7,14 +7,18 @@ import { FaCarSide } from "react-icons/fa";
 import { FaSync } from "react-icons/fa";
 import Button from "@/components/ui/Button";
 import Loading from "@/components/ui/Loading";
+import { addToCart } from "@/redux/feature/cart/cartSlice";
+import { useDispatch } from "react-redux";
 export default function WalletDetailsPage() {
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(null);
-  const mainImage = "/images/wallet.jpg";
+  const mainImage =
+    "https://images.pexels.com/photos/20015773/pexels-photo-20015773/free-photo-of-choice-of-leather-wallets-with-embellishments.jpeg?auto=compress&cs=tinysrgb&w=600";
   const thumbnails = [
-    "/images/thumb1.jpg",
-    "/images/thumb2.jpg",
-    "/images/thumb3.jpg",
-    "/images/thumb4.jpg",
+    "https://images.pexels.com/photos/20015773/pexels-photo-20015773/free-photo-of-choice-of-leather-wallets-with-embellishments.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/20015773/pexels-photo-20015773/free-photo-of-choice-of-leather-wallets-with-embellishments.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/20015773/pexels-photo-20015773/free-photo-of-choice-of-leather-wallets-with-embellishments.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/20015773/pexels-photo-20015773/free-photo-of-choice-of-leather-wallets-with-embellishments.jpeg?auto=compress&cs=tinysrgb&w=600",
   ];
 
   let title = "Premium Quality Original Leather Classic Wallet (Code: SW-5)";
@@ -23,7 +27,7 @@ export default function WalletDetailsPage() {
   let whatsappNumber = "+8801848375505";
   let contactNumber = "01797393925";
 
-  const [currentQuantity, setCurrentQuantity] = React.useState(1);
+  const [currentQuantity, setCurrentQuantity] = useState(1);
 
   const products = [
     {
@@ -47,7 +51,7 @@ export default function WalletDetailsPage() {
   return (
     <div className='container sp mt-10 space-y-5 lg:space-y-10 '>
       {loading && (
-        <div className="mt-80">
+        <div className='mt-80'>
           <Loading loading={loading} />
         </div>
       )}
@@ -117,7 +121,6 @@ export default function WalletDetailsPage() {
                 href='/cart'
                 variant='secondary'
                 className='w-full py-2    font-bold bg-orange'
-                onClick={() => alert("Order placed!")}
               >
                 <h3> অর্ডার করুন</h3>
               </Button>
@@ -127,9 +130,9 @@ export default function WalletDetailsPage() {
                 href='/cart'
                 variant='danger'
                 className='w-full py-2 bg-red-500  font-bold mt-2 bg-red'
-                onClick={() => alert("Added to cart!")}
+                onClick={() => dispatch(addToCart)}
               >
-                <h3>Add to cart</h3>
+                Add to cart
               </Button>
             </div>
 

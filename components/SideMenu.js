@@ -14,20 +14,20 @@ export default function SideMenu({ setOpenSideMenu }) {
 
   const categories = [
     {
-      name: "Loafer",
+      name: "loafer",
       subCategories: ["Loafer", "Sandal", "Mojari Shoes", "Loafer Shoe"],
     },
     { name: "Wallet", subCategories: ["Long-Wallet", "Box-wallet"] },
-    { name: "Belt", subCategories: ["Leather Belt"] },
+    { name: "belt", subCategories: ["Leather Belt"] },
     {
-      name: "Bag",
+      name: "bag",
       subCategories: ["Office-bag", "Ladies-bag", "Personal-bag"],
     },
     {
-      name: "Sandel",
+      name: "sandel",
       subCategories: ["Slippers", "new-collection", "Eid-collection"],
     },
-    { name: "Women's", subCategories: ["women's shoe", "new-collection"] },
+    { name: "women's", subCategories: ["women's shoe", "new-collection"] },
   ];
 
   return (
@@ -46,7 +46,12 @@ export default function SideMenu({ setOpenSideMenu }) {
           {categories.map((category) => (
             <li key={category.name} className='mb-2 border-b border-dark'>
               <div className='flex justify-between items-center mb-2'>
-                <span className='font-semibold w-full '>{category.name}</span>
+                <Link
+                  href={category.name}
+                  className='font-semibold w-full capitalize '
+                >
+                  {category.name}
+                </Link>
                 {category.subCategories && (
                   <button
                     onClick={() => toggleCategory(category.name)}

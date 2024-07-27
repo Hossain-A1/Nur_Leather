@@ -79,13 +79,13 @@ export default function Navbar() {
         </div>
 
         <div className='cart-and-user clear-start gap-5 flex items-center justify-end md:justify-center  w-full '>
-          <span>
+          <Link href='/cart'>
             <FaCartPlus className='text-2xl text-dark font-semibold' />
-          </span>
+          </Link>
           <div>
-            <span>
+            <Link href='/auth/register'>
               <FaUser className='text-2xl text-dark font-semibold' />
-            </span>
+            </Link>
           </div>
         </div>
         <div>
