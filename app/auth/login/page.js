@@ -38,7 +38,7 @@ export default function LoginPage() {
     [formData, router, dispatch, setLoading]
   );
   return (
-    <div className='container sp mt-10 flex flex-col items-center justify-center '>
+    <div className='container sp md:mt-10 flex flex-col items-center justify-center '>
       <form
         onSubmit={handleAuthSubmit}
         className='flex flex-col gap-3 lg:w-2/3 w-full'

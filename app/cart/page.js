@@ -19,8 +19,10 @@ export default function CartPage() {
       <div className='w-full  bg-white rounded-lg shadow-md p-6'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
           <div className='p-4 border rounded-lg'>
-            <div className='bg-orange-500 text-white text-center py-2 rounded-lg mb-4'>
-              Please fill up the form to complete the Order
+            <div className='bg-orange text-center py-2 rounded-lg mb-4'>
+              <span className=' text-light'>
+                Please fill up the form to complete the Order
+              </span>
             </div>
             <form className='space-y-4'>
               <div>
@@ -41,9 +43,9 @@ export default function CartPage() {
                 />
               </div>
               <div>
-                <label className='block text-sm font-medium'>Mobile</label>
-                <div className='flex'>
-                  <span className='inline-flex items-center py-2 px-3 rounded-l-md border border-gray-300 bg-gray-50 text-gray-500 text-sm'>
+                <label className='block text-sm  font-medium'>Mobile</label>
+                <div className='flex items-center justify-center '>
+                  <span className='  py-2 px-3 rounded-l-md border border-gray-300 bg-gray-50 text-gray-500 text-sm'>
                     +88
                   </span>
                   <input
@@ -148,7 +150,7 @@ export default function CartPage() {
                 </div>
               </div>
             </div>
-            <div className='border-t pt-4'>
+            <div className='border-t space-y-5'>
               <div className='flex justify-between'>
                 <span>Subtotal:</span>
                 <span>৳ {price}</span>

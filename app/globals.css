@@ -51,24 +51,23 @@ h3 {
 h4 {
   @apply text-2xl text-center    font-[700];
 }
-h5{
+h5 {
   @apply lg:text-4xl text-2xl text-center    font-bold;
 }
-h6{
+h6 {
   @apply lg:text-2xl text-xl text-center    font-semibold;
 }
 p {
   @apply text-[1rem] leading-7  text-dark/85 font-[500];
 }
 
-
 .swiper-pagination-bullet {
-  background-color: #FF7A3D !important;
+  background-color: #ff7a3d !important;
   padding: 0.7rem !important;
 }
 
 .swiper-pagination-bullet-active {
-  background-color:#FF7A3D !important;
+  background-color: #ff7a3d !important;
   padding: 0.7rem !important;
 }
 
