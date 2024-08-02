@@ -9,7 +9,7 @@ import Button from "@/components/ui/Button";
 import Loading from "@/components/ui/Loading";
 import { addToCart } from "@/redux/feature/cart/cartSlice";
 import { useDispatch } from "react-redux";
-export default function WalletDetailsPage() {
+export default function ProductDetailsPage() {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(null);
   const mainImage =

@@ -9,6 +9,7 @@ export default function SideMenu({ setOpenSideMenu }) {
     setOpenCategories((prevState) => ({
       ...prevState,
       [category]: !prevState[category],
+   
     }));
   };
 
@@ -54,7 +55,7 @@ export default function SideMenu({ setOpenSideMenu }) {
                 </Link>
                 {category.subCategories && (
                   <button
-                    onClick={() => toggleCategory(category.name)}
+                    onClick={() => toggleCategory(category.name)  }
                     className='ml-2   w-10  text-xl font-semibold shadow-sm shadow-blue  text-center '
                   >
                     {openCategories[category.name] ? "-" : "+"}
@@ -68,7 +69,7 @@ export default function SideMenu({ setOpenSideMenu }) {
                       key={subCategory}
                       className='text-sm  border-b border-dark p-1 capitalize'
                     >
-                      <Link href={`/${subCategory.toLowerCase()}`}>
+                      <Link href={`/${subCategory.toLowerCase()}`} onClick={()=>setOpenSideMenu(false)}>
                         {subCategory}
                       </Link>
                     </li>

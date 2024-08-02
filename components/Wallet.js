@@ -25,7 +25,7 @@ export default function Wallet() {
 
   return (
     <div className='p-4 flex max-lg:flex-wrap gap-6 container '>
-      <Link href='wallet' className='mb-6 lg:w-1/2 block w-full  '>
+      <Link href='/' className='mb-6 lg:w-1/2 block w-full  '>
         <h3>Wallet</h3>
         <picture className='w-full  h-80  md:h-[35rem]'>
           <Image
@@ -51,7 +51,7 @@ export default function Wallet() {
           {products.map((product) => (
             <div key={product.id} className='border rounded-lg'>
               <Link
-                href={`/wallet/${product.id}`}
+                href={`/products/${product.id}`}
                 className='relative block  w-full h-44 md:h-60 '
               >
                 <Image

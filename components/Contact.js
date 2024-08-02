@@ -5,10 +5,9 @@ import { useRouter } from "next/router";
 import { useRef } from "react";
 import toast from "react-hot-toast";
 
-
 export default function Contact() {
   const formRef = useRef(null);
-  const router = useRouter()
+  const router = useRouter();
 
   const handleContact = async (e) => {
     e.preventDefault();
@@ -26,7 +25,7 @@ export default function Contact() {
       );
 
       toast.success("Your message sent!");
-      router.push("/")
+      router.push("/");
     } catch (error) {
       console.error("Failed to send message:", error);
       toast.error("Failed to send message!");
