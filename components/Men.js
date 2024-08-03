@@ -4,13 +4,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiShoppingCart } from "react-icons/fi";
 import CurrencyFormatter from "./ui/CurrencyFormatter";
+import Loading from "./ui/Loading";
+import Error from "./ui/Error";
 
 export default function Men() {
-  const {data:products} = useFetch('/api/products')
+  const {data:products,isLoading,error} = useFetch('/api/products')
+  console.log(products);
   
   return (
-    <div className='p-4 flex max-lg:flex-wrap gap-6 container '>
-    <Link href='/' className='mb-6 lg:w-1/2 block w-full  '>
+    <div className='p-4 flex  max-lg:flex-wrap gap-6 container '>
+        <div className='flex items-center justify-center'>
+        {isLoading && <Loading />}
+        {error && (
+          <div>
+            <Error error={error.message} />
+            <h2>Check your internet connection or refesh!</h2>
+          </div>
+        )}
+      </div>
+  <div>
+  <Link href='/' className='mb-6 lg:w-[26rem] block w-full    '>
       <h3>Mens</h3>
       <figure className='w-full  h-80  md:h-[35rem]'>
         <Image
@@ -22,6 +35,7 @@ export default function Men() {
         />
       </figure>
     </Link>
+  </div>
     <div className='w-full h-full '>
       <div className='w-full flex justify-end items-end mb-3'>
         <Link
