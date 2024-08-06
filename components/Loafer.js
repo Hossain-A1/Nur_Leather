@@ -6,7 +6,8 @@ import CurrencyFormatter from "./ui/CurrencyFormatter";
 
 export default function Loafer({ product }) {
   return (
-    <div>
+   <div>
+     <Link href={`/products/${product._id}`}>
       <div className='relative w-full h-60 mb-4'>
         <Image
           src={product.images[0]}
@@ -19,7 +20,7 @@ export default function Loafer({ product }) {
         <span className='absolute bg-dark text-light pr-2 pl-1 rounded-r-full'>{product.code}</span>
       </div>
       <div className='mb-4'>
-        <small>{product.title}</small>
+        <small className="capitalize font-semibold">{product.title}</small>
 
         <div className='mb-4 flex  items-start gap-3'>
           <del>
@@ -36,6 +37,7 @@ export default function Loafer({ product }) {
           </Button>
         </div>
       </div>
-    </div>
+    </Link>
+   </div>
   );
 }
